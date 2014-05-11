@@ -4,7 +4,7 @@
 # Thanks Peter
 
 # data file
-f <- gzfile("household_power_consumption.txt.gz","rt");
+f <- gzfile("household_power_consumption.txt","rt");
 
 # read lines that match on dates
 nolines <- 100
@@ -24,7 +24,7 @@ close(f)
 # now we create a text connection and load data
 tc<-textConnection(greped,"rt") 
 df<-read.table(tc,sep=";", col.names = colnames(read.table(
-  "household_power_consumption.txt.gz",
+  "household_power_consumption.txt",
   nrow = 1, header = TRUE, sep=";")), na.strings = "?")
 
 # convert Date and Time variables to Date/Time classes
